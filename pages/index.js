@@ -56,7 +56,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Criado por {' '}
-          <img src="/ralf.svg" alt="Guth Sites logo" className={styles.logo} />
+          <img src="/ralf.svg" alt="Guth Sites" className={styles.logo} />
         </a>
       </footer>
     </div>
