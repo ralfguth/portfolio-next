@@ -28,11 +28,12 @@ export default function Home() {
               Minhas redes sociais, e-mail e telefone.
             </p>
           </a>
-
-
-          <a href="https://ralfguth.vercel.app" className={styles.card}>
-            <h3>Sobre &rarr;</h3>
-            <p>em construção</p>
+          <a
+            href="https://github.com/ralfguth"
+            className={styles.card}
+          >
+            <h3>Github &rarr;</h3>
+            <p>Repositório com meus trabalhos</p>
           </a>
 
           <a href="https://ralfguth.vercel.app" className={styles.card}>
@@ -40,12 +41,9 @@ export default function Home() {
             <p>em construção</p>
           </a>
 
-          <a
-            href="https://github.com/ralfguth"
-            className={styles.card}
-          >
-            <h3>Github &rarr;</h3>
-            <p>Repositório com meus trabalhos</p>
+          <a href="https://ralfguth.vercel.app" className={styles.card}>
+            <h3>Sobre &rarr;</h3>
+            <p>em construção</p>
           </a>
 
         </div>
