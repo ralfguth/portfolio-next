@@ -5,46 +5,45 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Ralf Guth</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Eu sou <a href="https://ralfguth.vercel.app">Ralf Guth!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+             Professor de geografia e Programador autodidata
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://ralfguth.vercel.app" className={styles.card}>
+            <h3>Sobre &rarr;</h3>
+            <p>em construção</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="https://ralfguth.vercel.app" className={styles.card}>
+            <h3>Experiência &rarr;</h3>
+            <p>em construção</p>
           </a>
 
           <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://github.com/ralfguth"
             className={styles.card}
           >
-            <h3>Deploy &rarr;</h3>
+            <h3>Github &rarr;</h3>
+            <p>Repositório com meus trabalhos</p>
+          </a>
+
+          <a
+            href="https://allmylinks.com/rsguth"
+            className={styles.card}
+          >
+            <h3>Contato &rarr;</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Minhas redes sociais, e-mail e telefone.
             </p>
           </a>
         </div>
@@ -52,12 +51,12 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.instagram.com/guth.sites"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Criado por {' '}
+          <img src="/ralf.svg" alt="Guth Sites logo" className={styles.logo} />
         </a>
       </footer>
     </div>
