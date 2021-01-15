@@ -25,7 +25,7 @@ export default function Home() {
           >
             <h3>Contato &rarr;</h3>
             <p>
-              Minhas redes sociais, e-mail e telefone.
+              Redes sociais e etc.
             </p>
           </a>
           <a
