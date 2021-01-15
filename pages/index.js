@@ -19,6 +19,17 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
+        <a
+            href="https://allmylinks.com/rsguth"
+            className={styles.card}
+          >
+            <h3>Contato &rarr;</h3>
+            <p>
+              Minhas redes sociais, e-mail e telefone.
+            </p>
+          </a>
+
+
           <a href="https://ralfguth.vercel.app" className={styles.card}>
             <h3>Sobre &rarr;</h3>
             <p>em construção</p>
@@ -37,15 +48,6 @@ export default function Home() {
             <p>Repositório com meus trabalhos</p>
           </a>
 
-          <a
-            href="https://allmylinks.com/rsguth"
-            className={styles.card}
-          >
-            <h3>Contato &rarr;</h3>
-            <p>
-              Minhas redes sociais, e-mail e telefone.
-            </p>
-          </a>
         </div>
       </main>
 
