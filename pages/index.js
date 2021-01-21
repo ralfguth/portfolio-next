@@ -19,15 +19,22 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-        <a
-            href="https://allmylinks.com/rsguth"
+ 
+          <a href="mailto:rsguth@gmail.com" className={styles.card}>
+            <h3>e-mail &rarr;</h3>
+            <p>rsguth@gmail.com</p>
+          </a>
+
+          <a
+            href="https://linklist.bio/ralfguth"
             className={styles.card}
           >
-            <h3>Contato &rarr;</h3>
+            <h3>Outros Contatos &rarr;</h3>
             <p>
-              Redes sociais e etc.
+              Whatsapp e mídias sociais
             </p>
           </a>
+
           <a
             href="https://github.com/ralfguth"
             className={styles.card}
@@ -36,10 +43,7 @@ export default function Home() {
             <p>Repositório com meus trabalhos</p>
           </a>
 
-          <a href="https://ralfguth.vercel.app" className={styles.card}>
-            <h3>Experiência &rarr;</h3>
-            <p>em construção</p>
-          </a>
+          
 
           <a href="https://ralfguth.vercel.app" className={styles.card}>
             <h3>Sobre &rarr;</h3>
@@ -55,7 +59,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Criado por eu mesmo :) {' '}
+          Criado por Ralf Guth {' '}
           <img src="/ralf.svg" alt="Guth Sites" className={styles.logo} />
         </a>
       </footer>
