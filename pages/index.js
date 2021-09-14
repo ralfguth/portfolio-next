@@ -11,20 +11,26 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Eu sou <a href="https://ralfguth.vercel.app">Ralf Guth!</a>
+          Eu sou <a href="https://ralfguth.dev">Ralf Guth!</a>
         </h1>
 
         <p className={styles.description}>
-             Professor de geografia e Programador autodidata
+          Desenvolvedor Web
         </p>
 
         <div className={styles.grid}>
- 
+
           <a href="mailto:rsguth@gmail.com" className={styles.card}>
             <h3>e-mail &rarr;</h3>
             <p>rsguth@gmail.com</p>
           </a>
-
+          <a
+            href="https://github.com/ralfguth"
+            className={styles.card}
+          >
+            <h3>Github &rarr;</h3>
+            <p>Repositório com meus trabalhos</p>
+          </a>
           <a
             href="https://linklist.bio/ralfguth"
             className={styles.card}
@@ -35,33 +41,11 @@ export default function Home() {
             </p>
           </a>
 
-          <a
-            href="https://github.com/ralfguth"
-            className={styles.card}
-          >
-            <h3>Github &rarr;</h3>
-            <p>Repositório com meus trabalhos</p>
-          </a>
-
-          
-
-          <a href="https://ralfguth.vercel.app" className={styles.card}>
-            <h3>Sobre &rarr;</h3>
-            <p>em construção</p>
-          </a>
-
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://www.instagram.com/guth.sites"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Criado por Ralf Guth {' '}
-          <img src="/ralf.svg" alt="Guth Sites" className={styles.logo} />
-        </a>
+        <img src="/ralf.svg" alt="Guth Sites" className={styles.logo} />
       </footer>
     </div>
   )
