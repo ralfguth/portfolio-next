@@ -1,7 +1,3 @@
-.header {
-  text-align: center;
-}
-
 .title a {
   color: #eaeaea;
   text-decoration: none;
@@ -61,7 +57,7 @@
     margin: 0px;
   }
   .title {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   .description {
     font-size: 1.5rem;
