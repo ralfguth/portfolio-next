@@ -8,7 +8,7 @@ const Deck = () => {
         
           <Card link='https://github.com/ralfguth' title='Repositório do GitHub' description='meus projetos pessoais e estudos' />
           <Card link='https://www.linkedin.com/in/ralf-guth-7404a7161/' title='LinkedIn' description='Experiencias e skills profissionais' />
-          <Card link='mailto:rsguth@gmail.com' title='Contato' description='Entre em contato' />
+          <Card link='mailto:rsguth@gmail.com' title='E-mail' description='Entre em contato ;)' />
 
         </div>
     )
