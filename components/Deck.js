@@ -7,7 +7,8 @@ const Deck = () => {
         <div className={styles.grid}>
         
           <Card link='https://github.com/ralfguth' title='Repositório do GitHub' description='meus projetos pessoais e estudos' />
-          <Card link='https://www.linkedin.com/in/ralf-guth-7404a7161/' title='Linkedin' description='Experiencias e skills profissionais' />
+          <Card link='https://www.linkedin.com/in/ralf-guth-7404a7161/' title='LinkedIn' description='Experiencias e skills profissionais' />
+          <Card link='mailto:rsguth@gmail.com' title='Contato' description='Entre em contato' />
 
         </div>
     )
