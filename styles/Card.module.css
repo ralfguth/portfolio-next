@@ -10,7 +10,7 @@
   transition: color 0.15s ease, border-color 0.15s ease;
   background-color: rgba(238,174,202,0.25);
   background: radial-gradient(180deg, rgba(238,174,202,0.5) 0%, rgba(148,187,233,0.5) 100%);
-  color: #002727;
+  color: #111111;
 }
 
 .card:hover,
