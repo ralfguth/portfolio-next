@@ -1,5 +1,5 @@
 .title a {
-  color: #eaeaea;
+  color: #111111;
   text-decoration: none;
   transition: 1000ms;
 }
@@ -37,13 +37,6 @@
   opacity: 0.5;
   margin-left: auto;
   margin-right: auto;
-}
-
-.logo:active {
-  height: 7em;
-  margin-bottom: 1em;
-  transition: 0.1s;
-  filter: hue-rotate(86deg) saturate(50%);
 }
 
 .logo:hover {
