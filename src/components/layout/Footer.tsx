@@ -7,7 +7,8 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <span className={styles.text}>
-          {profile.name} &middot; {new Date().getFullYear()}
+          {profile.name} &middot; {profile.location} &middot;{' '}
+          {new Date().getFullYear()}
         </span>
         <div className={styles.links}>
           <a

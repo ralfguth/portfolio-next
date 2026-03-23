@@ -1,46 +1,71 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
+  grid-auto-rows: 1fr;
+  gap: var(--space-lg);
 }
 
 .card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-top: 2px solid transparent;
   border-radius: 8px;
-  padding: 1.5rem;
-  transition: border-color var(--transition-normal),
-    transform var(--transition-normal), box-shadow var(--transition-normal);
-  animation: cardFadeInUp 0.5s ease forwards;
-  opacity: 0;
+  padding: var(--space-lg);
+  transition: opacity 0.4s ease, transform 0.4s ease,
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
-@keyframes cardFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.cardHidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-3px);
+  border-top-color: var(--color-accent);
   box-shadow: 0 8px 24px var(--color-shadow);
 }
 
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.card:hover .iconCircle {
+  background-color: var(--color-accent-glow);
+  transform: scale(1.1);
+}
+
 .cardTitle {
-  font-size: 1.05rem;
+  font-size: var(--font-size-base);
   font-weight: 600;
-  margin-bottom: 0.5rem;
   color: var(--color-text);
 }
 
 .cardDescription {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: 1.6;
 }

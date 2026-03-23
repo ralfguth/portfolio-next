@@ -12,23 +12,39 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <h1 className={`${styles.name} animate-fade-in-up`}>{profile.name}</h1>
-      <p className={`${styles.title} animate-fade-in-up delay-1`}>
-        {content.title}
-      </p>
-      <p className={`${styles.subtitle} animate-fade-in-up delay-2`}>
-        {profile.subtitle}
-      </p>
-      <p className={`${styles.summary} animate-fade-in-up delay-3`}>
-        {content.summary}
-      </p>
-      <div className={`${styles.actions} animate-fade-in-up delay-4`}>
-        <Link href="/about" className={styles.btnPrimary}>
-          {labels.hero.aboutMe}
-        </Link>
-        <a href={`mailto:${profile.email}`} className={styles.btnSecondary}>
-          {labels.hero.contact}
-        </a>
+      <div className={styles.content}>
+        <h1 className={styles.name}>{profile.name}</h1>
+        <p className={styles.title}>{content.title}</p>
+        <p className={styles.subtitle}>{profile.subtitle}</p>
+        <p className={styles.summary}>{content.summary}</p>
+        <div className={styles.actions}>
+          <Link href="/about" className={styles.btnPrimary}>
+            {labels.hero.aboutMe}
+          </Link>
+          <a href={`mailto:${profile.email}`} className={styles.btnSecondary}>
+            {labels.hero.contact}
+          </a>
+        </div>
+      </div>
+      <div className={styles.decoration} aria-hidden="true">
+        <div className={styles.terminal}>
+          <div className={styles.terminalBar}>
+            <span className={styles.dot} data-color="red" />
+            <span className={styles.dot} data-color="yellow" />
+            <span className={styles.dot} data-color="green" />
+          </div>
+          <div className={styles.terminalBody}>
+            <div className={`${styles.codeLine} ${styles.line1}`} data-accent />
+            <div className={`${styles.codeLine} ${styles.line2}`} />
+            <div className={`${styles.codeLine} ${styles.line3}`} data-accent />
+            <div className={`${styles.codeLine} ${styles.line4}`} />
+            <div className={`${styles.codeLine} ${styles.line5}`} />
+            <div className={styles.codeLineCursor}>
+              <div className={`${styles.codeLine} ${styles.line6}`} data-accent />
+              <span className={styles.cursor} />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

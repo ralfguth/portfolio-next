@@ -14,8 +14,10 @@ describe('Header', () => {
   })
 
   it('exibe o logo com link para home', () => {
-    const logo = screen.getByText('ralf.guth')
-    expect(logo.closest('a')).toHaveAttribute('href', '/')
+    const logo = screen.getByText((content, element) => {
+      return element?.tagName === 'A' && element?.textContent === 'ralf.guth'
+    })
+    expect(logo).toHaveAttribute('href', '/')
   })
 
   it('exibe links de secao', () => {

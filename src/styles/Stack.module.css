@@ -1,28 +1,60 @@
 .groups {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.groups > :first-child {
+  grid-column: 1 / -1;
 }
 
 .group {
-  animation: groupFadeInUp 0.5s ease forwards;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  transition: opacity 0.4s ease, transform 0.4s ease,
+    box-shadow var(--transition-normal);
+}
+
+.groupHidden {
   opacity: 0;
+  transform: translateY(16px);
+}
+
+.groupVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.group:hover {
+  box-shadow: 0 4px 16px var(--color-shadow);
 }
 
 .groupTitle {
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-md);
   font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.groupIcon {
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
 }
 
 .items {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
 .item {
@@ -30,27 +62,28 @@
   align-items: center;
   gap: 0;
   padding: 0.55rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   transition: border-color var(--transition-normal),
     background-color var(--transition-normal),
     transform var(--transition-fast),
     padding var(--transition-normal),
     gap var(--transition-normal),
-    box-shadow var(--transition-normal);
+    box-shadow var(--transition-normal),
+    opacity 0.4s ease;
   cursor: default;
   overflow: hidden;
 }
 
 .item:hover {
   border-color: var(--color-accent);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-accent-subtle);
   transform: translateY(-2px);
   padding: 0.55rem 0.85rem;
-  gap: 0.5rem;
+  gap: var(--space-sm);
   box-shadow: 0 4px 12px var(--color-shadow);
 }
 
@@ -79,13 +112,17 @@
   opacity: 1;
 }
 
-@keyframes groupFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Primary items (first 3 in each group) */
+.item:nth-child(-n + 3) .label {
+  font-weight: 600;
+}
+
+.item:nth-child(-n + 3) .icon {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 640px) {
+  .groups {
+    grid-template-columns: 1fr;
   }
 }

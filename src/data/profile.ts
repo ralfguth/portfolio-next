@@ -108,7 +108,7 @@ const content = {
       focus:
         'Meu foco técnico está em microsserviços com Java e Quarkus, banco de dados PostgreSQL, cache distribuído com Redis e plataformas de mensageria como RabbitMQ, ActiveMQ/Artemis e Azure Service Bus. Utilizo Docker e Kubernetes para conteinerização e estou cursando pós-graduação em Arquitetura de Software pela FIAP.',
       principles: [
-        'Código simples e legível antes de código "inteligente"',
+        'Código orientado ao domínio do negócio, com linguagem ubíqua e entrega de valor',
         'Testes automatizados como parte do processo, não como etapa extra',
         'Documentação técnica que resolve dúvidas reais',
         'Revisão de código como ferramenta de qualidade',
@@ -214,7 +214,7 @@ const content = {
       focus:
         'My technical focus is on microservices with Java and Quarkus, PostgreSQL databases, distributed caching with Redis and messaging platforms such as RabbitMQ, ActiveMQ/Artemis and Azure Service Bus. I use Docker and Kubernetes for containerization and I am pursuing a postgraduate degree in Software Architecture at FIAP.',
       principles: [
-        'Simple and readable code before "clever" code',
+        'Domain-driven code with ubiquitous language and a focus on delivering business value',
         'Automated testing as part of the process, not an extra step',
         'Technical documentation that solves real questions',
         'Code review as a quality tool',

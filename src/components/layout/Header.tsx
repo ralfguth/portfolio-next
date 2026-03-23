@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { t } from '@/data/translations'
+import { useActiveSection } from '@/hooks/useActiveSection'
 import LanguageSwitch from './LanguageSwitch'
 import ThemeToggle from './ThemeToggle'
 import styles from '@/styles/Header.module.css'
@@ -15,10 +16,25 @@ interface NavItem {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
   const { locale } = useLanguage()
   const labels = t(locale)
   const isHome = router.pathname === '/'
+
+  const sectionIds = useMemo(
+    () => ['stack', 'areas', 'experiencia', 'formacao'],
+    []
+  )
+  const activeSection = useActiveSection(sectionIds)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const sectionLinks: NavItem[] = [
     { href: '/#stack', label: labels.nav.stack },
@@ -42,10 +58,12 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}
+    >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          ralf.guth
+          ralf<span className={styles.logoDot}>.</span>guth
         </Link>
 
         <button
@@ -59,11 +77,12 @@ export default function Header() {
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
           {sectionLinks.map((link) => {
             const sectionId = link.href.replace('/#', '')
+            const isActive = isHome && activeSection === sectionId
             return (
               <a
                 key={link.href}
                 href={link.href}
-                className={styles.navLink}
+                className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
                 onClick={(e) => handleSectionClick(e, sectionId)}
               >
                 {link.label}

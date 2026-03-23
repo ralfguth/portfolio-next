@@ -1,32 +1,70 @@
 .links {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-md);
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 0;
+  padding: var(--space-2xl) 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.linksHidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.linksVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  gap: var(--space-sm);
+  padding: 0.85rem 1.5rem;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--color-text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   text-decoration: none;
+  background-image: none;
   transition: border-color var(--transition-fast),
-    color var(--transition-fast), transform var(--transition-fast);
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--color-shadow);
+  background-size: 0% 0;
+}
+
+.link[data-platform='github']:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.06);
+}
+
+.link[data-platform='linkedin']:hover {
+  border-color: #0077b5;
+  color: #0077b5;
+  background-color: rgba(0, 119, 181, 0.06);
+}
+
+.link[data-platform='email']:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-2px);
+  background-color: var(--color-accent-subtle);
 }
 
 .linkIcon {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   display: flex;
+  transition: transform var(--transition-fast);
+}
+
+.link:hover .linkIcon {
+  transform: rotate(5deg) scale(1.1);
 }

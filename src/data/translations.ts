@@ -3,7 +3,7 @@ import { Locale } from '@/contexts/LanguageContext'
 const translations = {
   pt: {
     nav: {
-      stack: 'Stack',
+      stack: 'Tecnologias',
       areas: 'Áreas',
       experience: 'Experiência',
       education: 'Formação',
@@ -14,7 +14,7 @@ const translations = {
       contact: 'Contato',
     },
     sections: {
-      stack: 'Stack e Tecnologias',
+      stack: 'Tecnologias',
       areas: 'Áreas de Atuação',
       experience: 'Experiência Profissional',
       education: 'Formação Acadêmica',
@@ -38,7 +38,7 @@ const translations = {
   },
   en: {
     nav: {
-      stack: 'Stack',
+      stack: 'Technologies',
       areas: 'Areas',
       experience: 'Experience',
       education: 'Education',
@@ -49,7 +49,7 @@ const translations = {
       contact: 'Contact',
     },
     sections: {
-      stack: 'Stack & Technologies',
+      stack: 'Technologies',
       areas: 'Areas of Expertise',
       experience: 'Professional Experience',
       education: 'Education',

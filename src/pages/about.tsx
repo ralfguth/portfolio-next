@@ -4,7 +4,28 @@ import { profile, getAbout } from '@/data/profile'
 import { stackGroups } from '@/data/stack'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { t } from '@/data/translations'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import styles from '@/styles/About.module.css'
+
+function AboutBlock({
+  children,
+  index,
+}: {
+  children: React.ReactNode
+  index: number
+}) {
+  const { ref, isVisible } = useScrollReveal()
+
+  return (
+    <div
+      ref={ref}
+      className={`${styles.block} ${isVisible ? styles.blockVisible : styles.blockHidden}`}
+      style={{ transitionDelay: `${index * 0.1}s` }}
+    >
+      {children}
+    </div>
+  )
+}
 
 export default function About() {
   const { locale } = useLanguage()
@@ -12,62 +33,63 @@ export default function About() {
   const about = getAbout(locale)
 
   return (
-    <Layout title={labels.meta.aboutTitle} description={labels.meta.aboutDescription}>
+    <Layout
+      title={labels.meta.aboutTitle}
+      description={labels.meta.aboutDescription}
+    >
       <div className={styles.page}>
-        <div className={`${styles.header} animate-fade-in-up`}>
+        <div className={styles.header}>
           <h1 className={styles.pageTitle}>{labels.about.pageTitle}</h1>
           <p className={styles.pageSubtitle}>{profile.name}</p>
         </div>
 
-        <div className={styles.block} style={{ animationDelay: '0.1s' }}>
-          <p className={styles.text}>{about.intro}</p>
-        </div>
+        <AboutBlock index={0}>
+          <p className={styles.intro}>{about.intro}</p>
+        </AboutBlock>
 
-        <div className={styles.block} style={{ animationDelay: '0.2s' }}>
+        <AboutBlock index={1}>
           <h2 className={styles.blockTitle}>{labels.about.trajectory}</h2>
           <p className={styles.text}>{about.trajectory}</p>
-        </div>
+        </AboutBlock>
 
-        <div className={styles.block} style={{ animationDelay: '0.3s' }}>
+        <AboutBlock index={2}>
           <h2 className={styles.blockTitle}>{labels.about.focus}</h2>
           <p className={styles.text}>{about.focus}</p>
-        </div>
+        </AboutBlock>
 
-        <div className={styles.block} style={{ animationDelay: '0.4s' }}>
+        <AboutBlock index={3}>
           <h2 className={styles.blockTitle}>{labels.about.technologies}</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <div className={styles.techGrid}>
             {stackGroups.slice(0, 3).flatMap((group) =>
               group.items.slice(0, 4).map((tech) => (
-                <span
-                  key={tech.name}
-                  style={{
-                    padding: '0.4rem 0.8rem',
-                    backgroundColor: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    borderRadius: '6px',
-                    fontSize: '0.85rem',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
+                <span key={tech.name} className={styles.techPill}>
+                  {tech.icon && (
+                    <span
+                      className={styles.techIcon}
+                      style={{ color: tech.color }}
+                    >
+                      <tech.icon />
+                    </span>
+                  )}
                   {tech.name}
                 </span>
               ))
             )}
           </div>
-        </div>
+        </AboutBlock>
 
-        <div className={styles.block} style={{ animationDelay: '0.5s' }}>
+        <AboutBlock index={4}>
           <h2 className={styles.blockTitle}>{labels.about.principles}</h2>
-          <ul className={styles.principles}>
+          <ol className={styles.principles}>
             {about.principles.map((principle) => (
               <li key={principle} className={styles.principle}>
                 {principle}
               </li>
             ))}
-          </ul>
-        </div>
+          </ol>
+        </AboutBlock>
 
-        <div className={styles.block} style={{ animationDelay: '0.6s' }}>
+        <AboutBlock index={5}>
           <h2 className={styles.blockTitle}>{labels.about.contact}</h2>
           <div className={styles.contactLinks}>
             <a
@@ -93,7 +115,7 @@ export default function About() {
               <FiMail /> {profile.email}
             </a>
           </div>
-        </div>
+        </AboutBlock>
       </div>
     </Layout>
   )
