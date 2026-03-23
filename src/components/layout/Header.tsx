@@ -2,6 +2,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { t } from '@/data/translations'
+import LanguageSwitch from './LanguageSwitch'
 import styles from '@/styles/Header.module.css'
 
 interface NavItem {
@@ -9,22 +12,19 @@ interface NavItem {
   label: string
 }
 
-const pageLinks: NavItem[] = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'Sobre' },
-]
-
-const sectionLinks: NavItem[] = [
-  { href: '/#stack', label: 'Stack' },
-  { href: '/#areas', label: 'Áreas' },
-  { href: '/#experiencia', label: 'Experiência' },
-  { href: '/#formacao', label: 'Formação' },
-]
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
+  const { locale } = useLanguage()
+  const labels = t(locale)
   const isHome = router.pathname === '/'
+
+  const sectionLinks: NavItem[] = [
+    { href: '/#stack', label: labels.nav.stack },
+    { href: '/#areas', label: labels.nav.areas },
+    { href: '/#experiencia', label: labels.nav.experience },
+    { href: '/#formacao', label: labels.nav.education },
+  ]
 
   const handleSectionClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -72,20 +72,17 @@ export default function Header() {
 
           <span className={styles.divider} />
 
-          {pageLinks
-            .filter((link) => link.href !== '/')
-            .map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.navLink} ${
-                  router.pathname === link.href ? styles.navLinkActive : ''
-                }`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <Link
+            href="/about"
+            className={`${styles.navLink} ${
+              router.pathname === '/about' ? styles.navLinkActive : ''
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {labels.nav.about}
+          </Link>
+
+          <LanguageSwitch />
         </nav>
       </div>
     </header>

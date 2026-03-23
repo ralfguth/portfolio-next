@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import About from '@/pages/about'
 
 jest.mock('next/router', () => ({
@@ -7,17 +8,25 @@ jest.mock('next/router', () => ({
   }),
 }))
 
+function renderWithProviders() {
+  render(
+    <LanguageProvider>
+      <About />
+    </LanguageProvider>
+  )
+}
+
 describe('About', () => {
   beforeEach(() => {
-    render(<About />)
+    renderWithProviders()
   })
 
   it('exibe o titulo da pagina', () => {
     expect(screen.getByText('Sobre mim')).toBeInTheDocument()
   })
 
-  it('exibe o titulo profissional', () => {
-    expect(screen.getByText('Desenvolvedor Back-End')).toBeInTheDocument()
+  it('exibe o nome', () => {
+    expect(screen.getByText('Ralf Guth')).toBeInTheDocument()
   })
 
   it('exibe a secao de trajetoria', () => {

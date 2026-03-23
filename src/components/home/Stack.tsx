@@ -1,11 +1,16 @@
 import { stackGroups } from '@/data/stack'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { t } from '@/data/translations'
 import styles from '@/styles/Stack.module.css'
 import sectionStyles from '@/styles/Section.module.css'
 
 export default function Stack() {
+  const { locale } = useLanguage()
+  const labels = t(locale)
+
   return (
     <section id="stack" className={sectionStyles.section}>
-      <h2 className={sectionStyles.sectionTitle}>Stack e Tecnologias</h2>
+      <h2 className={sectionStyles.sectionTitle}>{labels.sections.stack}</h2>
       <div className={styles.groups}>
         {stackGroups.map((group, groupIndex) => (
           <div

@@ -1,11 +1,19 @@
-import { experience } from '@/data/profile'
+import { getExperience } from '@/data/profile'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { t } from '@/data/translations'
 import styles from '@/styles/Experience.module.css'
 import sectionStyles from '@/styles/Section.module.css'
 
 export default function Experience() {
+  const { locale } = useLanguage()
+  const experience = getExperience(locale)
+  const labels = t(locale)
+
   return (
     <section id="experiencia" className={sectionStyles.section}>
-      <h2 className={sectionStyles.sectionTitle}>Experiência Profissional</h2>
+      <h2 className={sectionStyles.sectionTitle}>
+        {labels.sections.experience}
+      </h2>
       <ul className={styles.list}>
         {experience.map((item, index) => (
           <li

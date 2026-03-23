@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import Header from '@/components/layout/Header'
 
 jest.mock('next/router', () => ({
@@ -7,9 +8,17 @@ jest.mock('next/router', () => ({
   }),
 }))
 
+function renderWithProviders() {
+  render(
+    <LanguageProvider>
+      <Header />
+    </LanguageProvider>
+  )
+}
+
 describe('Header', () => {
   beforeEach(() => {
-    render(<Header />)
+    renderWithProviders()
   })
 
   it('exibe o logo com link para home', () => {
@@ -28,14 +37,21 @@ describe('Header', () => {
     expect(screen.getByText('Sobre')).toBeInTheDocument()
   })
 
-  it('exibe botao de menu mobile', () => {
-    const menuButton = screen.getByRole('button', { name: /menu/i })
-    expect(menuButton).toBeInTheDocument()
+  it('exibe botoes de idioma', () => {
+    expect(screen.getByText('PT')).toBeInTheDocument()
+    expect(screen.getByText('EN')).toBeInTheDocument()
   })
 
   it('alterna menu ao clicar no botao', () => {
     const menuButton = screen.getByRole('button', { name: /menu/i })
     fireEvent.click(menuButton)
     expect(screen.getByRole('button', { name: /fechar/i })).toBeInTheDocument()
+  })
+
+  it('troca idioma ao clicar em EN', () => {
+    fireEvent.click(screen.getByText('EN'))
+    expect(screen.getByText('About')).toBeInTheDocument()
+    expect(screen.getByText('Experience')).toBeInTheDocument()
+    expect(screen.getByText('Education')).toBeInTheDocument()
   })
 })

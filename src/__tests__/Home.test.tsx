@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import Home from '@/pages/index'
 
 jest.mock('next/router', () => ({
@@ -7,9 +8,17 @@ jest.mock('next/router', () => ({
   }),
 }))
 
+function renderWithProviders() {
+  render(
+    <LanguageProvider>
+      <Home />
+    </LanguageProvider>
+  )
+}
+
 describe('Home', () => {
   beforeEach(() => {
-    render(<Home />)
+    renderWithProviders()
   })
 
   it('exibe o nome do desenvolvedor', () => {

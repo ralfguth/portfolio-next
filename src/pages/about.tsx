@@ -1,37 +1,40 @@
 import Layout from '@/components/layout/Layout'
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
-import { profile, aboutContent } from '@/data/profile'
+import { profile, getAbout } from '@/data/profile'
 import { stackGroups } from '@/data/stack'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { t } from '@/data/translations'
 import styles from '@/styles/About.module.css'
 
 export default function About() {
+  const { locale } = useLanguage()
+  const labels = t(locale)
+  const about = getAbout(locale)
+
   return (
-    <Layout
-      title="Sobre — Ralf Guth"
-      description="Desenvolvedor backend com foco em Java, microsserviços e arquitetura de software."
-    >
+    <Layout title={labels.meta.aboutTitle} description={labels.meta.aboutDescription}>
       <div className={styles.page}>
         <div className={`${styles.header} animate-fade-in-up`}>
-          <h1 className={styles.pageTitle}>Sobre mim</h1>
-          <p className={styles.pageSubtitle}>{profile.title}</p>
+          <h1 className={styles.pageTitle}>{labels.about.pageTitle}</h1>
+          <p className={styles.pageSubtitle}>{profile.name}</p>
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.1s' }}>
-          <p className={styles.text}>{aboutContent.intro}</p>
+          <p className={styles.text}>{about.intro}</p>
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.2s' }}>
-          <h2 className={styles.blockTitle}>Trajetória</h2>
-          <p className={styles.text}>{aboutContent.trajectory}</p>
+          <h2 className={styles.blockTitle}>{labels.about.trajectory}</h2>
+          <p className={styles.text}>{about.trajectory}</p>
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.3s' }}>
-          <h2 className={styles.blockTitle}>Foco Técnico</h2>
-          <p className={styles.text}>{aboutContent.focus}</p>
+          <h2 className={styles.blockTitle}>{labels.about.focus}</h2>
+          <p className={styles.text}>{about.focus}</p>
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.4s' }}>
-          <h2 className={styles.blockTitle}>Principais Tecnologias</h2>
+          <h2 className={styles.blockTitle}>{labels.about.technologies}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {stackGroups.slice(0, 3).flatMap((group) =>
               group.items.slice(0, 4).map((tech) => (
@@ -54,9 +57,9 @@ export default function About() {
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.5s' }}>
-          <h2 className={styles.blockTitle}>Princípios de Trabalho</h2>
+          <h2 className={styles.blockTitle}>{labels.about.principles}</h2>
           <ul className={styles.principles}>
-            {aboutContent.principles.map((principle) => (
+            {about.principles.map((principle) => (
               <li key={principle} className={styles.principle}>
                 {principle}
               </li>
@@ -65,7 +68,7 @@ export default function About() {
         </div>
 
         <div className={styles.block} style={{ animationDelay: '0.6s' }}>
-          <h2 className={styles.blockTitle}>Contato</h2>
+          <h2 className={styles.blockTitle}>{labels.about.contact}</h2>
           <div className={styles.contactLinks}>
             <a
               href={profile.github}
