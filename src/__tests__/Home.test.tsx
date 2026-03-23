@@ -46,8 +46,12 @@ describe('Home', () => {
     expect(screen.getByText('Áreas de Atuação')).toBeInTheDocument()
   })
 
-  it('exibe secao de experiencia', () => {
-    expect(screen.getByText('Experiência e Atuação')).toBeInTheDocument()
+  it('exibe secao de experiencia profissional', () => {
+    expect(screen.getByText('Experiência Profissional')).toBeInTheDocument()
+  })
+
+  it('exibe secao de formacao academica', () => {
+    expect(screen.getByText('Formação Acadêmica')).toBeInTheDocument()
   })
 
   it('exibe links externos (GitHub, LinkedIn)', () => {

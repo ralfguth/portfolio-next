@@ -44,12 +44,59 @@ export const areas = [
 ]
 
 export const experience = [
-  'Microsserviços para operação do PIX em cooperativa financeira (Cresol)',
-  'Sistemas com foco em escalabilidade, resiliência e alta performance',
-  'Análise de requisitos, documentação técnica e revisão de código',
-  'Desenvolvimento com Java EE, Jakarta EE, Hibernate e JSF em projetos de educação e pesquisa (FEESC)',
-  'Atuação em setores como educação, pesquisa, geoprocessamento, gestão pública e financeiro',
-  'Pós-graduação em andamento em Arquitetura de Software (FIAP)',
+  {
+    role: 'Desenvolvedor de Software',
+    company: 'Cresol Cooperativa',
+    period: 'jun/2022 — presente',
+    description:
+      'Desenvolvimento de microsserviços para operação do PIX, com foco em escalabilidade, resiliência e alta performance. Java, Quarkus, PostgreSQL, Redis, RabbitMQ, ActiveMQ/Artemis, Azure Service Bus, Docker e Kubernetes.',
+  },
+  {
+    role: 'Desenvolvedor de Software',
+    company: 'FEESC — Fundação de Ensino e Engenharia de SC',
+    period: 'fev/2021 — jun/2022',
+    description:
+      'Desenvolvimento do Sistema de Acompanhamento e Avaliação de Cursos. Java EE, Hibernate, JSF e PostgreSQL.',
+  },
+  {
+    role: 'Desenvolvedor de Software',
+    company: 'Freelance',
+    period: 'jan/2020 — fev/2021',
+    description:
+      'Desenvolvimento de landing pages e sites institucionais com WordPress.',
+  },
+  {
+    role: 'Professor',
+    company: 'Prefeitura Municipal de Florianópolis',
+    period: 'mar/2016 — dez/2019',
+    description: '',
+  },
+  {
+    role: 'Técnico de SIG',
+    company: 'Universidade Federal de Santa Catarina',
+    period: 'jun/2012 — set/2015',
+    description:
+      'Desenvolvimento de geometrias e apoio técnico de pesquisa no Laboratório Cidade e Sociedade (CFH/UFSC).',
+  },
+]
+
+export const education = [
+  {
+    degree: 'Pós-graduação em Software Architecture',
+    institution: 'FIAP',
+    period: '2025 — 2026',
+    status: 'em andamento',
+  },
+  {
+    degree: 'Tecnólogo em Gestão da Tecnologia da Informação',
+    institution: 'IFSC — Instituto Federal de Santa Catarina',
+    period: '',
+  },
+  {
+    degree: 'Bacharelado e Licenciatura em Geografia',
+    institution: 'Universidade Federal de Santa Catarina',
+    period: '',
+  },
 ]
 
 export const aboutContent = {
