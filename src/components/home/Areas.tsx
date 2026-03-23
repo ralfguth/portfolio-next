@@ -4,7 +4,7 @@ import sectionStyles from '@/styles/Section.module.css'
 
 export default function Areas() {
   return (
-    <section className={sectionStyles.section}>
+    <section id="areas" className={sectionStyles.section}>
       <h2 className={sectionStyles.sectionTitle}>Áreas de Atuação</h2>
       <div className={styles.grid}>
         {areas.map((area, index) => (

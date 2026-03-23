@@ -17,8 +17,14 @@ describe('Header', () => {
     expect(logo.closest('a')).toHaveAttribute('href', '/')
   })
 
-  it('exibe links de navegacao', () => {
-    expect(screen.getByText('Home')).toBeInTheDocument()
+  it('exibe links de secao', () => {
+    expect(screen.getByText('Stack')).toBeInTheDocument()
+    expect(screen.getByText('Áreas')).toBeInTheDocument()
+    expect(screen.getByText('Experiência')).toBeInTheDocument()
+    expect(screen.getByText('Formação')).toBeInTheDocument()
+  })
+
+  it('exibe link para pagina sobre', () => {
     expect(screen.getByText('Sobre')).toBeInTheDocument()
   })
 

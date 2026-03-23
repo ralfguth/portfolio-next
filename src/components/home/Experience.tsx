@@ -4,7 +4,7 @@ import sectionStyles from '@/styles/Section.module.css'
 
 export default function Experience() {
   return (
-    <section className={sectionStyles.section}>
+    <section id="experiencia" className={sectionStyles.section}>
       <h2 className={sectionStyles.sectionTitle}>Experiência Profissional</h2>
       <ul className={styles.list}>
         {experience.map((item, index) => (

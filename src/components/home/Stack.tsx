@@ -4,7 +4,7 @@ import sectionStyles from '@/styles/Section.module.css'
 
 export default function Stack() {
   return (
-    <section className={sectionStyles.section}>
+    <section id="stack" className={sectionStyles.section}>
       <h2 className={sectionStyles.sectionTitle}>Stack e Tecnologias</h2>
       <div className={styles.groups}>
         {stackGroups.map((group, groupIndex) => (
@@ -18,11 +18,14 @@ export default function Stack() {
               {group.items.map((tech) => (
                 <span key={tech.name} className={styles.item}>
                   {tech.icon && (
-                    <span className={styles.icon}>
+                    <span
+                      className={styles.icon}
+                      style={{ color: tech.color }}
+                    >
                       <tech.icon />
                     </span>
                   )}
-                  {tech.name}
+                  <span className={styles.label}>{tech.name}</span>
                 </span>
               ))}
             </div>

@@ -72,6 +72,12 @@
   width: 100%;
 }
 
+.divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-border);
+}
+
 .menuButton {
   display: none;
   background: none;
