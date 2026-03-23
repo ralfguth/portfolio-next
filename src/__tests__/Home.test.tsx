@@ -17,7 +17,7 @@ describe('Home', () => {
   })
 
   it('exibe o titulo profissional', () => {
-    expect(screen.getByText('Desenvolvedor de Software')).toBeInTheDocument()
+    expect(screen.getByText('Desenvolvedor Back-End')).toBeInTheDocument()
   })
 
   it('exibe link para pagina sobre', () => {
@@ -54,6 +54,6 @@ describe('Home', () => {
     const githubLinks = screen.getAllByRole('link', { name: /GitHub/i })
     expect(githubLinks.some((el) => el.getAttribute('href') === 'https://github.com/ralfguth')).toBe(true)
     const linkedinLinks = screen.getAllByRole('link', { name: /LinkedIn/i })
-    expect(linkedinLinks.some((el) => el.getAttribute('href') === 'https://www.linkedin.com/in/ralf-guth-7404a7161/')).toBe(true)
+    expect(linkedinLinks.some((el) => el.getAttribute('href') === 'https://www.linkedin.com/in/ralfguth')).toBe(true)
   })
 })

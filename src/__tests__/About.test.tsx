@@ -17,7 +17,7 @@ describe('About', () => {
   })
 
   it('exibe o titulo profissional', () => {
-    expect(screen.getByText('Desenvolvedor de Software')).toBeInTheDocument()
+    expect(screen.getByText('Desenvolvedor Back-End')).toBeInTheDocument()
   })
 
   it('exibe a secao de trajetoria', () => {

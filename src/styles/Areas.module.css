@@ -11,8 +11,19 @@
   padding: 1.5rem;
   transition: border-color var(--transition-normal),
     transform var(--transition-normal), box-shadow var(--transition-normal);
-  animation: fadeInUp 0.5s ease forwards;
+  animation: cardFadeInUp 0.5s ease forwards;
   opacity: 0;
+}
+
+@keyframes cardFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card:hover {

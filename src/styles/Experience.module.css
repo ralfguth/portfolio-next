@@ -16,10 +16,21 @@
   color: var(--color-text-secondary);
   line-height: 1.5;
   transition: background-color var(--transition-fast);
-  animation: fadeInUp 0.5s ease forwards;
+  animation: itemFadeInUp 0.5s ease forwards;
   opacity: 0;
 }
 
 .item:hover {
   background-color: var(--color-bg-secondary);
+}
+
+@keyframes itemFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
