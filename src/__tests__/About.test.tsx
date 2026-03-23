@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+import { screen } from '@testing-library/react'
+import { renderWithProviders } from '@/test-utils'
 import About from '@/pages/about'
 
 jest.mock('next/router', () => ({
@@ -8,17 +8,9 @@ jest.mock('next/router', () => ({
   }),
 }))
 
-function renderWithProviders() {
-  render(
-    <LanguageProvider>
-      <About />
-    </LanguageProvider>
-  )
-}
-
 describe('About', () => {
   beforeEach(() => {
-    renderWithProviders()
+    renderWithProviders(<About />)
   })
 
   it('exibe o titulo da pagina', () => {

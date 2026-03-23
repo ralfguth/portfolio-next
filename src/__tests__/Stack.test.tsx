@@ -1,18 +1,10 @@
-import { render, screen } from '@testing-library/react'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+import { screen } from '@testing-library/react'
+import { renderWithProviders } from '@/test-utils'
 import Stack from '@/components/home/Stack'
-
-function renderWithProviders() {
-  render(
-    <LanguageProvider>
-      <Stack />
-    </LanguageProvider>
-  )
-}
 
 describe('Stack', () => {
   beforeEach(() => {
-    renderWithProviders()
+    renderWithProviders(<Stack />)
   })
 
   it('exibe o titulo da secao', () => {

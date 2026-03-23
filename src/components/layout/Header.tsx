@@ -5,6 +5,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { t } from '@/data/translations'
 import LanguageSwitch from './LanguageSwitch'
+import ThemeToggle from './ThemeToggle'
 import styles from '@/styles/Header.module.css'
 
 interface NavItem {
@@ -83,6 +84,7 @@ export default function Header() {
           </Link>
 
           <LanguageSwitch />
+          <ThemeToggle />
         </nav>
       </div>
     </header>

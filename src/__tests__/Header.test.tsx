@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+import { screen, fireEvent } from '@testing-library/react'
+import { renderWithProviders } from '@/test-utils'
 import Header from '@/components/layout/Header'
 
 jest.mock('next/router', () => ({
@@ -8,17 +8,9 @@ jest.mock('next/router', () => ({
   }),
 }))
 
-function renderWithProviders() {
-  render(
-    <LanguageProvider>
-      <Header />
-    </LanguageProvider>
-  )
-}
-
 describe('Header', () => {
   beforeEach(() => {
-    renderWithProviders()
+    renderWithProviders(<Header />)
   })
 
   it('exibe o logo com link para home', () => {
@@ -40,6 +32,10 @@ describe('Header', () => {
   it('exibe botoes de idioma', () => {
     expect(screen.getByText('PT')).toBeInTheDocument()
     expect(screen.getByText('EN')).toBeInTheDocument()
+  })
+
+  it('exibe botao de tema', () => {
+    expect(screen.getByRole('button', { name: /tema/i })).toBeInTheDocument()
   })
 
   it('alterna menu ao clicar no botao', () => {

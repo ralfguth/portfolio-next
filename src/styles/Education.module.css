@@ -48,7 +48,7 @@
 .status {
   font-size: 0.75rem;
   color: var(--color-accent);
-  background-color: rgba(79, 143, 247, 0.1);
+  background-color: var(--color-status-bg);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   font-weight: 600;

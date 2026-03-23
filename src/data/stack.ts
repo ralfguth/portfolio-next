@@ -95,7 +95,7 @@ export const stackGroups: TechGroup[] = [
   {
     title: 'Frontend / Web',
     items: [
-      { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff' },
+      { name: 'Next.js', icon: SiNextdotjs },
       { name: 'React', icon: SiReact, color: '#61dafb' },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
       { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
