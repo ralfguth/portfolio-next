@@ -1,0 +1,106 @@
+import {
+  SiOpenjdk,
+  SiQuarkus,
+  SiSpring,
+  SiHibernate,
+  SiPostgresql,
+  SiRedis,
+  SiRabbitmq,
+  SiApache,
+  SiDocker,
+  SiKubernetes,
+  SiTerraform,
+  SiGithubactions,
+  SiAmazonaws,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiMicrosoftazure,
+} from 'react-icons/si'
+import {
+  FaDatabase,
+  FaCubes,
+  FaServer,
+  FaProjectDiagram,
+  FaLayerGroup,
+  FaCode,
+  FaCloud,
+  FaCog,
+  FaExchangeAlt,
+  FaCheckCircle,
+  FaNetworkWired,
+} from 'react-icons/fa'
+import { TechGroup } from '@/types/stack'
+
+export const stackGroups: TechGroup[] = [
+  {
+    title: 'Backend',
+    items: [
+      { name: 'Java', icon: SiOpenjdk },
+      { name: 'Quarkus', icon: SiQuarkus },
+      { name: 'Spring Framework', icon: SiSpring },
+      { name: 'Hibernate', icon: SiHibernate },
+      { name: 'JPA', icon: FaDatabase },
+      { name: 'Panache', icon: FaLayerGroup },
+      { name: 'Java EE', icon: FaCode },
+      { name: 'Jakarta EE', icon: FaServer },
+      { name: 'REST API', icon: FaNetworkWired },
+    ],
+  },
+  {
+    title: 'Banco de Dados',
+    items: [
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'SQL', icon: FaDatabase },
+      { name: 'Redis', icon: SiRedis },
+    ],
+  },
+  {
+    title: 'Mensageria',
+    items: [
+      { name: 'RabbitMQ', icon: SiRabbitmq },
+      { name: 'ActiveMQ', icon: SiApache },
+      { name: 'Artemis', icon: FaCog },
+      { name: 'Azure Service Bus', icon: SiMicrosoftazure },
+    ],
+  },
+  {
+    title: 'Arquitetura e Qualidade',
+    items: [
+      { name: 'Microservices', icon: FaCubes },
+      { name: 'DDD', icon: FaProjectDiagram },
+      { name: 'Clean Architecture', icon: FaLayerGroup },
+      { name: 'Hexagonal', icon: FaCubes },
+      { name: 'TDD', icon: FaCheckCircle },
+      { name: 'Integração', icon: FaExchangeAlt },
+    ],
+  },
+  {
+    title: 'DevOps / Cloud',
+    items: [
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Kubernetes', icon: SiKubernetes },
+      { name: 'Terraform', icon: SiTerraform },
+      { name: 'GitHub Actions', icon: SiGithubactions },
+      { name: 'AWS', icon: SiAmazonaws },
+      { name: 'CI/CD', icon: FaCog },
+      { name: 'Lambda', icon: FaCloud },
+      { name: 'API Gateway', icon: FaNetworkWired },
+      { name: 'EKS', icon: SiKubernetes },
+    ],
+  },
+  {
+    title: 'Frontend / Web',
+    items: [
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'React', icon: SiReact },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'HTML', icon: SiHtml5 },
+      { name: 'CSS', icon: SiCss3 },
+    ],
+  },
+]
