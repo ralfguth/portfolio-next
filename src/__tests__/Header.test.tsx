@@ -21,7 +21,7 @@ describe('Header', () => {
   })
 
   it('exibe links de secao', () => {
-    expect(screen.getByText('Stack')).toBeInTheDocument()
+    expect(screen.getByText('Tecnologias')).toBeInTheDocument()
     expect(screen.getByText('Áreas')).toBeInTheDocument()
     expect(screen.getByText('Experiência')).toBeInTheDocument()
     expect(screen.getByText('Formação')).toBeInTheDocument()

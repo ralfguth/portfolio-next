@@ -33,8 +33,8 @@ describe('Home', () => {
     expect(contactLinks.length).toBeGreaterThan(0)
   })
 
-  it('exibe secao de stack', () => {
-    expect(screen.getByText('Stack e Tecnologias')).toBeInTheDocument()
+  it('exibe secao de tecnologias', () => {
+    expect(screen.getByRole('heading', { name: 'Tecnologias' })).toBeInTheDocument()
   })
 
   it('exibe tecnologias principais', () => {

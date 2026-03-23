@@ -8,7 +8,7 @@ describe('Stack', () => {
   })
 
   it('exibe o titulo da secao', () => {
-    expect(screen.getByText('Stack e Tecnologias')).toBeInTheDocument()
+    expect(screen.getByText('Tecnologias')).toBeInTheDocument()
   })
 
   it('exibe os grupos de tecnologia', () => {

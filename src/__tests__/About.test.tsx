@@ -35,7 +35,7 @@ describe('About', () => {
 
   it('exibe os principios de trabalho', () => {
     expect(
-      screen.getByText(/Código simples e legível/)
+      screen.getByText(/Código orientado ao domínio/)
     ).toBeInTheDocument()
   })
 
