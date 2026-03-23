@@ -1,0 +1,140 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-header-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.headerScrolled {
+  box-shadow: 0 1px 8px var(--color-shadow);
+  border-bottom-color: transparent;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  background-image: none;
+  font-family: var(--font-mono);
+  transition: color var(--transition-fast);
+}
+
+.logo:hover {
+  color: var(--color-text);
+}
+
+.logoDot {
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.logo:hover .logoDot {
+  color: var(--color-accent);
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.navLink {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  background-image: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  transition: width var(--transition-normal);
+  border-radius: 1px;
+}
+
+.navLink:hover {
+  color: var(--color-text);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLinkActive {
+  color: var(--color-accent);
+}
+
+.navLinkActive::after {
+  width: 100%;
+}
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-border);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+@media (max-width: 640px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 var(--space-lg);
+    gap: var(--space-md);
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  }
+
+  .navOpen {
+    max-height: 400px;
+    opacity: 1;
+    padding: var(--space-md) var(--space-lg);
+  }
+}

@@ -1,0 +1,121 @@
+.list {
+  list-style: none;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  position: relative;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.itemHidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.itemVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  border: 2px solid var(--color-bg);
+  flex-shrink: 0;
+  margin-top: 18px;
+}
+
+.dotActive {
+  background-color: var(--color-accent);
+  animation: pulse 2s infinite;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-border);
+  transition: background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.itemActive .cardContent {
+  border-left-color: var(--color-accent);
+}
+
+.item:hover .cardContent {
+  background-color: var(--color-surface-hover);
+}
+
+.degree {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.institution {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  margin-top: var(--space-xs);
+}
+
+.period {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+  background-color: var(--color-status-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #28c840;
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-accent-glow); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin-top: 14px;
+  }
+}

@@ -1,0 +1,106 @@
+import {
+  SiOpenjdk,
+  SiQuarkus,
+  SiSpring,
+  SiHibernate,
+  SiPostgresql,
+  SiRedis,
+  SiRabbitmq,
+  SiApache,
+  SiDocker,
+  SiKubernetes,
+  SiTerraform,
+  SiGithubactions,
+  SiAmazonaws,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiMicrosoftazure,
+} from 'react-icons/si'
+import {
+  FaDatabase,
+  FaCubes,
+  FaServer,
+  FaProjectDiagram,
+  FaLayerGroup,
+  FaCode,
+  FaCloud,
+  FaCog,
+  FaExchangeAlt,
+  FaCheckCircle,
+  FaNetworkWired,
+} from 'react-icons/fa'
+import { TechGroup } from '@/types/stack'
+
+export const stackGroups: TechGroup[] = [
+  {
+    title: 'Backend',
+    items: [
+      { name: 'Java', icon: SiOpenjdk, color: '#e76f00' },
+      { name: 'Quarkus', icon: SiQuarkus, color: '#4695eb' },
+      { name: 'Spring Framework', icon: SiSpring, color: '#6db33f' },
+      { name: 'Hibernate', icon: SiHibernate, color: '#bcae79' },
+      { name: 'JPA', icon: FaDatabase, color: '#59666d' },
+      { name: 'Panache', icon: FaLayerGroup, color: '#4695eb' },
+      { name: 'Java EE', icon: FaCode, color: '#e76f00' },
+      { name: 'Jakarta EE', icon: FaServer, color: '#e76f00' },
+      { name: 'REST API', icon: FaNetworkWired, color: '#49a078' },
+    ],
+  },
+  {
+    title: 'Banco de Dados',
+    items: [
+      { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169e1' },
+      { name: 'SQL', icon: FaDatabase, color: '#336791' },
+      { name: 'Redis', icon: SiRedis, color: '#dc382d' },
+    ],
+  },
+  {
+    title: 'Mensageria',
+    items: [
+      { name: 'RabbitMQ', icon: SiRabbitmq, color: '#ff6600' },
+      { name: 'ActiveMQ', icon: SiApache, color: '#d22128' },
+      { name: 'Artemis', icon: FaCog, color: '#d22128' },
+      { name: 'Azure Service Bus', icon: SiMicrosoftazure, color: '#0078d4' },
+    ],
+  },
+  {
+    title: 'Arquitetura e Qualidade',
+    items: [
+      { name: 'Microservices', icon: FaCubes, color: '#7b68ee' },
+      { name: 'DDD', icon: FaProjectDiagram, color: '#e06c75' },
+      { name: 'Clean Architecture', icon: FaLayerGroup, color: '#56b6c2' },
+      { name: 'Hexagonal', icon: FaCubes, color: '#c678dd' },
+      { name: 'TDD', icon: FaCheckCircle, color: '#98c379' },
+      { name: 'Integração', icon: FaExchangeAlt, color: '#d19a66' },
+    ],
+  },
+  {
+    title: 'DevOps / Cloud',
+    items: [
+      { name: 'Docker', icon: SiDocker, color: '#2496ed' },
+      { name: 'Kubernetes', icon: SiKubernetes, color: '#326ce5' },
+      { name: 'Terraform', icon: SiTerraform, color: '#7b42bc' },
+      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088ff' },
+      { name: 'AWS', icon: SiAmazonaws, color: '#ff9900' },
+      { name: 'CI/CD', icon: FaCog, color: '#61afef' },
+      { name: 'Lambda', icon: FaCloud, color: '#ff9900' },
+      { name: 'API Gateway', icon: FaNetworkWired, color: '#ff9900' },
+      { name: 'EKS', icon: SiKubernetes, color: '#326ce5' },
+    ],
+  },
+  {
+    title: 'Frontend / Web',
+    items: [
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'React', icon: SiReact, color: '#61dafb' },
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
+      { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
+      { name: 'HTML', icon: SiHtml5, color: '#e34f26' },
+      { name: 'CSS', icon: SiCss3, color: '#1572b6' },
+    ],
+  },
+]

@@ -1,0 +1,197 @@
+.page {
+  padding: var(--space-2xl) 0;
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+  position: relative;
+}
+
+.pageTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(
+    135deg,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pageSubtitle {
+  color: var(--color-accent);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.block {
+  margin-bottom: var(--space-2xl);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.blockHidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.blockVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blockTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.blockTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  border-radius: 1px;
+}
+
+.intro {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: var(--font-size-lg);
+  max-width: 65ch;
+}
+
+.text {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: var(--font-size-base);
+  max-width: 65ch;
+}
+
+/* Technologies */
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.techPill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.4rem 0.8rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.techPill:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+}
+
+.techIcon {
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+}
+
+/* Principles with CSS counter */
+.principles {
+  list-style: none;
+  display: grid;
+  gap: var(--space-sm);
+  counter-reset: principles;
+}
+
+.principle {
+  counter-increment: principles;
+  padding: 0.75rem var(--space-md);
+  background-color: var(--color-surface);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  transition: background-color var(--transition-fast);
+}
+
+.principle::before {
+  content: counter(principles, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.principle:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Contact */
+.contactLinks {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  background-image: none;
+  transition: border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.contactLink:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+  background-color: var(--color-accent-subtle);
+  background-size: 0% 0;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .pageTitle {
+    font-size: 1.7rem;
+  }
+
+  .contactLinks {
+    flex-direction: column;
+  }
+}
