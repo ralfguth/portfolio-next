@@ -93,6 +93,16 @@ export default function Header() {
           <span className={styles.divider} />
 
           <Link
+            href="/blog"
+            className={`${styles.navLink} ${
+              router.pathname.startsWith('/blog') ? styles.navLinkActive : ''
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {labels.nav.blog}
+          </Link>
+
+          <Link
             href="/about"
             className={`${styles.navLink} ${
               router.pathname === '/about' ? styles.navLinkActive : ''

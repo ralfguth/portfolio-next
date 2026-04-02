@@ -33,3 +33,7 @@ yarn-error.log*
 # vercel
 .vercel
 Profile.pdf
+
+# sanity studio
+studio/dist
+studio/node_modules

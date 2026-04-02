@@ -31,6 +31,12 @@ describe('Header', () => {
     expect(screen.getByText('Sobre')).toBeInTheDocument()
   })
 
+  it('exibe link para o blog', () => {
+    const blogLink = screen.getByText('Blog')
+    expect(blogLink).toBeInTheDocument()
+    expect(blogLink.closest('a')).toHaveAttribute('href', '/blog')
+  })
+
   it('exibe botoes de idioma', () => {
     expect(screen.getByText('PT')).toBeInTheDocument()
     expect(screen.getByText('EN')).toBeInTheDocument()
@@ -51,5 +57,6 @@ describe('Header', () => {
     expect(screen.getByText('About')).toBeInTheDocument()
     expect(screen.getByText('Experience')).toBeInTheDocument()
     expect(screen.getByText('Education')).toBeInTheDocument()
+    expect(screen.getByText('Blog')).toBeInTheDocument()
   })
 })
