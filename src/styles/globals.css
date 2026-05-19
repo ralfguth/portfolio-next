@@ -26,6 +26,14 @@
   --space-3xl: 4rem;
 }
 
+/*
+ * Accent palette derived from the site icon (public/ralf.svg).
+ * Favicon colors:
+ *   #008a80 dark teal · #00afa1 teal · #005dff blue
+ *   #00abf9 cyan-blue · #00f5f4 cyan
+ * The accents below use the teal as primary identity and pair it with the
+ * favicon's cyan/blue tones for gradients, keeping the brand cohesive.
+ */
 [data-theme='dark'] {
   --color-bg: #0f1117;
   --color-bg-secondary: #161822;
@@ -35,15 +43,17 @@
   --color-text: #e2e4ea;
   --color-text-secondary: #9498a8;
   --color-text-highlight: #f0f2f5;
-  --color-accent: #4f8ff7;
-  --color-accent-hover: #6ba3ff;
-  --color-accent-subtle: rgba(79, 143, 247, 0.08);
-  --color-accent-glow: rgba(79, 143, 247, 0.15);
-  --color-gradient-start: #4f8ff7;
-  --color-gradient-end: #7c5cfc;
+  --color-accent: #005dff;
+  --color-accent-hover: #3a7bff;
+  --color-accent-subtle: rgba(0, 93, 255, 0.10);
+  --color-accent-glow: rgba(0, 93, 255, 0.22);
+  --color-gradient-start: #005dff;
+  --color-gradient-end: #00abf9;
+  --color-highlight: #ffb020;
+  --color-highlight-subtle: rgba(255, 176, 32, 0.12);
   --color-header-bg: rgba(15, 17, 23, 0.9);
   --color-shadow: rgba(0, 0, 0, 0.2);
-  --color-status-bg: rgba(79, 143, 247, 0.1);
+  --color-status-bg: rgba(0, 93, 255, 0.12);
 }
 
 [data-theme='light'] {
@@ -55,15 +65,17 @@
   --color-text: #1a1d2b;
   --color-text-secondary: #5c6070;
   --color-text-highlight: #0d1017;
-  --color-accent: #2e6ed8;
-  --color-accent-hover: #1b5abe;
-  --color-accent-subtle: rgba(46, 110, 216, 0.06);
-  --color-accent-glow: rgba(46, 110, 216, 0.12);
-  --color-gradient-start: #2e6ed8;
-  --color-gradient-end: #6345d1;
+  --color-accent: #005dff;
+  --color-accent-hover: #003fbe;
+  --color-accent-subtle: rgba(0, 93, 255, 0.07);
+  --color-accent-glow: rgba(0, 93, 255, 0.14);
+  --color-gradient-start: #005dff;
+  --color-gradient-end: #00abf9;
+  --color-highlight: #a05a00;
+  --color-highlight-subtle: rgba(160, 90, 0, 0.10);
   --color-header-bg: rgba(248, 249, 251, 0.9);
   --color-shadow: rgba(0, 0, 0, 0.08);
-  --color-status-bg: rgba(46, 110, 216, 0.1);
+  --color-status-bg: rgba(0, 93, 255, 0.10);
 }
 
 *,

@@ -23,7 +23,7 @@
 }
 
 .pageSubtitle {
-  color: var(--color-accent);
+  color: var(--color-highlight);
   font-size: var(--font-size-lg);
   font-weight: 600;
 }
@@ -141,7 +141,7 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-highlight);
   flex-shrink: 0;
 }
 

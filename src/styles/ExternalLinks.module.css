@@ -42,9 +42,9 @@
 }
 
 .link[data-platform='github']:hover {
-  border-color: #8b5cf6;
-  color: #8b5cf6;
-  background-color: rgba(139, 92, 246, 0.06);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
 }
 
 .link[data-platform='linkedin']:hover {

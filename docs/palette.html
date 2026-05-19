@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Paleta — ralfguth.dev</title>
+<style>
+  :root {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 3rem 2rem;
+    background: #0f1117;
+    color: #e2e4ea;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 0.4rem;
+    background: linear-gradient(135deg, #005dff, #00abf9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .lede {
+    color: #9498a8;
+    margin: 0 0 2.5rem;
+    max-width: 60ch;
+  }
+  h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9498a8;
+    margin: 2.5rem 0 1rem;
+    font-weight: 600;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a2d3e;
+    background: #1c1f2e;
+  }
+  .chip {
+    height: 110px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .meta {
+    padding: 0.7rem 0.85rem 0.9rem;
+    font-size: 0.78rem;
+  }
+  .meta .name {
+    color: #e2e4ea;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+  .meta .token {
+    font-family: 'JetBrains Mono', monospace;
+    color: #9498a8;
+    font-size: 0.72rem;
+    word-break: break-all;
+  }
+  .gradient {
+    height: 110px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+  .theme {
+    border: 1px solid #2a2d3e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+  .theme.light {
+    background: #f8f9fb;
+    color: #1a1d2b;
+    border-color: #dfe1e8;
+  }
+  .theme.light h2 { color: #5c6070; }
+  .theme.light .swatch { background: #ffffff; border-color: #dfe1e8; }
+  .theme.light .swatch .meta .name { color: #1a1d2b; }
+  .theme.light .swatch .meta .token { color: #5c6070; }
+  .source {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .source .chip { height: 80px; }
+  .demo {
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    background: #1c1f2e;
+    border: 1px solid #2a2d3e;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .demo.light {
+    background: #ffffff;
+    border-color: #dfe1e8;
+  }
+  .demo .role { font-weight: 600; }
+  .demo .body { color: #9498a8; font-size: 0.9rem; }
+  .demo.light .body { color: #5c6070; }
+  footer {
+    margin-top: 3rem;
+    color: #5c6070;
+    font-size: 0.78rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Paleta — ralfguth.dev</h1>
+<p class="lede">Derivada do ícone do site (<code>public/ralf.svg</code>). Azul dominante (<code>#005dff</code>) para identidade e estados interativos; âmbar (<code>--color-highlight</code>) como cor oposta para destaques de texto (subtítulos, nome de empresa/instituição, contadores, categorias de blog).</p>
+
+<h2>Cores extraídas do favicon</h2>
+<div class="source">
+  <div class="swatch"><div class="chip" style="background:#008a80;color:#fff">#008a80</div><div class="meta"><div class="name">Teal escuro</div><div class="token">layer 101</div></div></div>
+  <div class="swatch"><div class="chip" style="background:#00afa1;color:#fff">#00afa1</div><div class="meta"><div class="name">Teal</div><div class="token">layer 102</div></div></div>
+  <div class="swatch"><div class="chip" style="background:#005dff;color:#fff">#005dff</div><div class="meta"><div class="name">Azul (accent)</div><div class="token">layer 103</div></div></div>
+  <div class="swatch"><div class="chip" style="background:#00abf9;color:#fff">#00abf9</div><div class="meta"><div class="name">Ciano-azul</div><div class="token">layer 104</div></div></div>
+  <div class="swatch"><div class="chip" style="background:#00f5f4;color:#0f1117">#00f5f4</div><div class="meta"><div class="name">Ciano</div><div class="token">layer 105</div></div></div>
+</div>
+
+<h2>Tema escuro</h2>
+<div class="theme">
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#005dff;color:#fff">#005dff</div><div class="meta"><div class="name">Accent</div><div class="token">--color-accent</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#3a7bff;color:#fff">#3a7bff</div><div class="meta"><div class="name">Accent hover</div><div class="token">--color-accent-hover</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(0,93,255,0.10);color:#e2e4ea;border-top:1px solid #2a2d3e">rgba(0,93,255,.10)</div><div class="meta"><div class="name">Accent subtle</div><div class="token">--color-accent-subtle</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(0,93,255,0.22);color:#e2e4ea;border-top:1px solid #2a2d3e">rgba(0,93,255,.22)</div><div class="meta"><div class="name">Accent glow</div><div class="token">--color-accent-glow</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffb020;color:#0f1117">#ffb020</div><div class="meta"><div class="name">Highlight</div><div class="token">--color-highlight</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(255,176,32,0.12);color:#e2e4ea;border-top:1px solid #2a2d3e">rgba(255,176,32,.12)</div><div class="meta"><div class="name">Highlight subtle</div><div class="token">--color-highlight-subtle</div></div></div>
+    <div class="swatch"><div class="gradient" style="background:linear-gradient(135deg,#005dff,#00abf9)">blue → cyan-blue</div><div class="meta"><div class="name">Gradiente</div><div class="token">--color-gradient-start → end</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0f1117;color:#e2e4ea;border-top:1px solid #2a2d3e">#0f1117</div><div class="meta"><div class="name">Background</div><div class="token">--color-bg</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#1c1f2e;color:#e2e4ea;border-top:1px solid #2a2d3e">#1c1f2e</div><div class="meta"><div class="name">Surface</div><div class="token">--color-surface</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#e2e4ea;color:#0f1117">#e2e4ea</div><div class="meta"><div class="name">Text</div><div class="token">--color-text</div></div></div>
+  </div>
+  <div class="demo">
+    <div class="role" style="color:#ffb020">Senior Software Engineer</div>
+    <div style="color:#e2e4ea;font-size:1.1rem;font-weight:700">Ralf Guth</div>
+    <div class="body">Exemplo: <a style="color:#005dff;font-weight:600">links e estados interativos</a> em azul, <span style="color:#ffb020;font-weight:600">cargos, empresas e contadores</span> em âmbar.</div>
+  </div>
+</div>
+
+<h2>Tema claro</h2>
+<div class="theme light">
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#005dff;color:#fff">#005dff</div><div class="meta"><div class="name">Accent</div><div class="token">--color-accent</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#003fbe;color:#fff">#003fbe</div><div class="meta"><div class="name">Accent hover</div><div class="token">--color-accent-hover</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(0,93,255,0.07);color:#1a1d2b;border-top:1px solid #dfe1e8">rgba(0,93,255,.07)</div><div class="meta"><div class="name">Accent subtle</div><div class="token">--color-accent-subtle</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(0,93,255,0.14);color:#1a1d2b;border-top:1px solid #dfe1e8">rgba(0,93,255,.14)</div><div class="meta"><div class="name">Accent glow</div><div class="token">--color-accent-glow</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#a05a00;color:#fff">#a05a00</div><div class="meta"><div class="name">Highlight</div><div class="token">--color-highlight</div></div></div>
+    <div class="swatch"><div class="chip" style="background:rgba(160,90,0,0.10);color:#1a1d2b;border-top:1px solid #dfe1e8">rgba(160,90,0,.10)</div><div class="meta"><div class="name">Highlight subtle</div><div class="token">--color-highlight-subtle</div></div></div>
+    <div class="swatch"><div class="gradient" style="background:linear-gradient(135deg,#005dff,#00abf9)">blue → cyan-blue</div><div class="meta"><div class="name">Gradiente</div><div class="token">--color-gradient-start → end</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#f8f9fb;color:#1a1d2b;border-top:1px solid #dfe1e8">#f8f9fb</div><div class="meta"><div class="name">Background</div><div class="token">--color-bg</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff;color:#1a1d2b;border-top:1px solid #dfe1e8">#ffffff</div><div class="meta"><div class="name">Surface</div><div class="token">--color-surface</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#1a1d2b;color:#f8f9fb">#1a1d2b</div><div class="meta"><div class="name">Text</div><div class="token">--color-text</div></div></div>
+  </div>
+  <div class="demo light">
+    <div class="role" style="color:#a05a00">Senior Software Engineer</div>
+    <div style="color:#1a1d2b;font-size:1.1rem;font-weight:700">Ralf Guth</div>
+    <div class="body">Exemplo: <a style="color:#005dff;font-weight:600">links e estados interativos</a> em azul, <span style="color:#a05a00;font-weight:600">cargos, empresas e contadores</span> em âmbar.</div>
+  </div>
+</div>
+
+<footer>
+  Tokens definidos em <code>src/styles/globals.css</code>. Contrastes: accent claro <code>#005dff</code> em <code>#f8f9fb</code> ≈ 4.9:1 (AA); accent escuro <code>#005dff</code> em <code>#0f1117</code> ≈ 3.7:1 — abaixo de AA para texto normal mas válido para texto grande/UI, e o hover sobe para ~5.4:1. Highlight escuro <code>#ffb020</code> em <code>#0f1117</code> ≈ 10:1; highlight claro <code>#a05a00</code> em <code>#f8f9fb</code> ≈ 5:1.
+</footer>
+
+</body>
+</html>

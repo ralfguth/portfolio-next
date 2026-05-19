@@ -107,7 +107,7 @@
 
 .company {
   font-size: var(--font-size-sm);
-  color: var(--color-accent);
+  color: var(--color-highlight);
 }
 
 .description {
